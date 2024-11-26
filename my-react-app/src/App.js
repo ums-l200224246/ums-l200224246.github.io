@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import GitHubProfile from './GitHubProfile';
 
 function App() {
   return (

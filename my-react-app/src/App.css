@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+
+/* src/App.css */
+.App {
+  text-align: center;
+}
+
+.profile {
+  margin-top: 20px;
+}
+
+.profile img {
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.profile a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.profile a:hover {
+  text-decoration: underline;
+}
+
