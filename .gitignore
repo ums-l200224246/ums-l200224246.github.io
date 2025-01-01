@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+env/
+venv/
+venv3.11/
+*.env
+*.venv
+*.eggs
+*.egg-info
+dist/
+build/
+*.log
+*.pot
+*.pyc
+*.pyo
+.DS_Store
+
+# React
+node_modules/
+build/
+dist/
+*.log
+*.env
+*.tsbuildinfo
+*.eslintcache
+*.cache/
+*.idea/
+*.vscode/
+
+# Mac OS
+.DS_Store
+
+# Windows
+Thumbs.db
