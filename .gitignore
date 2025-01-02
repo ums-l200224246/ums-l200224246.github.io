@@ -22,7 +22,7 @@ build/
 
 # Jupyter Notebook
 .ipynb_checkpoints/
-*.ipynb
+# *.ipynb
 *.jpynb
 *.jupyterlab-workspaces
 *.jlpmrc

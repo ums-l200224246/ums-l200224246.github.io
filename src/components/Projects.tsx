@@ -9,7 +9,7 @@ export default function Projects() {
   useEffect(() => {
     const fetchRepos = async () => {
       try {
-        const response = await fetch('https://api.github.com/users/github/repos?sort=stars&per_page=6');
+        const response = await fetch('https://api.github.com/users/ums-l200224246/repos?sort=stars&per_page=6');
         const data = await response.json();
         setRepos(data);
       } catch (error) {
