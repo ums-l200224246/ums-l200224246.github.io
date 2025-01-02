@@ -7,15 +7,15 @@ export default function Introduction() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <img
-            src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&q=80&w=200&h=200"
+            src="/images/profile.jpg"
             alt="Profile"
             className="mx-auto h-32 w-32 rounded-full"
           />
           <h1 className="mt-6 text-4xl font-bold text-gray-900 dark:text-white">
-            Raka Rendra Fayanto <br /> Universitas Muhammadiyah Surakarta
+            Raka Rendra Fayanto
           </h1>
           <p className="mt-2 text-lg text-gray-600 dark:text-gray-300">
-            Full Stack Developer
+            Mahasiswa Aktif Universitas Muhammadiyah Surakarta
           </p>
           <p className="mt-4 max-w-2xl mx-auto text-gray-500 dark:text-gray-400">
             Passionate about building beautiful and functional web applications.
