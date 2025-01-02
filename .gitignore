@@ -20,6 +20,15 @@ build/
 *.pyo
 .DS_Store
 
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb
+*.jpynb
+*.jupyterlab-workspaces
+*.jlpmrc
+*.ipynb_metadata
+*.ipynb-meta
+
 # React
 node_modules/
 build/
@@ -37,3 +46,28 @@ dist/
 
 # Windows
 Thumbs.db
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
