@@ -1,3 +1,5 @@
+## Tugas Sebelum UTS membuat metaflow alur pekuliahan informatika
+
 from metaflow import FlowSpec, step
 
 class InformatikaKuliahFlow(FlowSpec):
