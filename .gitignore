@@ -19,7 +19,7 @@ build/
 *.pyc
 *.pyo
 .DS_Store
-
+.metaflow/
 # Jupyter Notebook
 .ipynb_checkpoints/
 # *.ipynb
