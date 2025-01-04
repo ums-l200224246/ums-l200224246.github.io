@@ -15,11 +15,10 @@ export default function Introduction() {
             Raka Rendra Fayanto
           </h1>
           <p className="mt-2 text-lg text-gray-600 dark:text-gray-300">
-            Mahasiswa Aktif Universitas Muhammadiyah Surakarta
+            Full Stack Prompt Enginer
           </p>
           <p className="mt-4 max-w-2xl mx-auto text-gray-500 dark:text-gray-400">
-            Passionate about building beautiful and functional web applications.
-            I love working with React, Node.js, and exploring new technologies.
+            99% content is made by AI, 1% is prompt by me.
           </p>
           
           <div className="mt-6 flex justify-center space-x-6">

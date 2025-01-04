@@ -13,9 +13,15 @@ export interface BlogPost {
   description: string;
   date: string;
   readTime: string;
+  content?: string;
 }
 
 export interface Theme {
   isDark: boolean;
   toggleTheme: () => void;
+}
+
+export interface NavItem {
+  path: string;
+  label: string;
 }

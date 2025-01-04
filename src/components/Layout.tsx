@@ -1,0 +1,19 @@
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import Navbar from './Navbar';
+import Footer from './Footer';
+import { useTheme } from '../contexts/ThemeContext';
+
+export default function Layout() {
+  const { isDark, toggleTheme } = useTheme();
+
+  return (
+    <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 transition-colors duration-200">
+      <Navbar isDark={isDark} toggleTheme={toggleTheme} />
+      <main className="flex-grow">
+        <Outlet />
+      </main>
+      <Footer />
+    </div>
+  );
+}
