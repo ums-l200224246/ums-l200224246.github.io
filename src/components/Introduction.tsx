@@ -1,5 +1,6 @@
 import React from 'react';
 import { Github, Linkedin, Instagram } from 'lucide-react';
+import profile from '/images/profile.jpg';
 
 export default function Introduction() {
   return (
@@ -7,7 +8,7 @@ export default function Introduction() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <img
-            src="/images/profile.jpg"
+            src= {profile}
             alt="Profile"
             className="mx-auto h-32 w-32 rounded-full"
           />
@@ -22,13 +23,13 @@ export default function Introduction() {
           </p>
           
           <div className="mt-6 flex justify-center space-x-6">
-            <a href="https://github.com" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
+            <a href="https://github.com/ums-l200224246" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
               <Github className="h-6 w-6" />
             </a>
             <a href="https://linkedin.com" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
               <Linkedin className="h-6 w-6" />
             </a>
-            <a href="https://instagram.com" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
+            <a href="https://instagram.com/rxndrxx" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
               <Instagram className="h-6 w-6" />
             </a>
           </div>
