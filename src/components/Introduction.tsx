@@ -19,7 +19,7 @@ export default function Introduction() {
             Full Stack Prompt Enginer
           </p>
           <p className="mt-4 max-w-2xl mx-auto text-gray-500 dark:text-gray-400">
-            99% content is made by AI, 1% is prompt by me.
+            99% content is made by AI.
           </p>
           
           <div className="mt-6 flex justify-center space-x-6">
