@@ -9,20 +9,49 @@ export function useGitHubRepos(username: string = 'ums-l200224246', page = 1, pe
 
   useEffect(() => {
     const fetchRepos = async () => {
+      const cacheKey = `gh_repos_${username}_${page}_${perPage}`;
+      const cacheCountKey = `gh_count_${username}`;
+      
+      // Check sessionStorage cache
+      try {
+        const cached = sessionStorage.getItem(cacheKey);
+        const cachedCount = sessionStorage.getItem(cacheCountKey);
+        if (cached && cachedCount) {
+          setRepos(JSON.parse(cached));
+          setTotalCount(JSON.parse(cachedCount));
+          setLoading(false);
+          return;
+        }
+      } catch {}
+
       try {
         setLoading(true);
 
-        // Use your GitHub username or a custom API URL here
         const response = await fetch(
-          `https://api.github.com/users/ums-l200224246/repos?page=${page}&per_page=${perPage}&sort=updated&direction=desc`
+          `https://api.github.com/users/${username}/repos?page=${page}&per_page=${perPage}&sort=updated&direction=desc`
         );
+        
+        if (!response.ok) {
+          if (response.status === 403) {
+            throw new Error('GitHub API rate limit exceeded. Please try again later.');
+          }
+          throw new Error(`Failed to fetch repositories (${response.status})`);
+        }
+        
         const data = await response.json();
         setRepos(data);
 
-        // Fetch total repository count
-        const countResponse = await fetch(`https://api.github.com/users/ums-l200224246`);
-        const userData = await countResponse.json();
-        setTotalCount(userData.public_repos);
+        const countResponse = await fetch(`https://api.github.com/users/${username}`);
+        if (countResponse.ok) {
+          const userData = await countResponse.json();
+          setTotalCount(userData.public_repos);
+          
+          // Cache the results
+          try {
+            sessionStorage.setItem(cacheKey, JSON.stringify(data));
+            sessionStorage.setItem(cacheCountKey, JSON.stringify(userData.public_repos));
+          } catch {}
+        }
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Failed to fetch repositories');
       } finally {

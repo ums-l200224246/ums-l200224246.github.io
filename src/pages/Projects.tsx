@@ -1,15 +1,19 @@
-import React, { useState } from 'react';
-import { useGitHubRepos } from '../hooks/useGitHubRepos';
-import Pagination from '../components/Pagination';
-import { ExternalLink, Star, Code } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';  // Ensure you are using react-router-dom for navigation
+import React, { useState } from "react";
+import { useGitHubRepos } from "../hooks/useGitHubRepos";
+import Pagination from "../components/Pagination";
+import { ExternalLink, Star, Code } from "lucide-react";
+import { useNavigate } from "react-router-dom"; // Ensure you are using react-router-dom for navigation
 
 const ITEMS_PER_PAGE = 10;
 
 export default function Projects() {
   const [currentPage, setCurrentPage] = useState(1);
-  const navigate = useNavigate();  // Initialize the navigate function
-  const { repos, loading, error, totalCount } = useGitHubRepos('github', currentPage, ITEMS_PER_PAGE);
+  const navigate = useNavigate(); // Initialize the navigate function
+  const { repos, loading, error, totalCount } = useGitHubRepos(
+    "github",
+    currentPage,
+    ITEMS_PER_PAGE,
+  );
   const totalPages = Math.ceil(totalCount / ITEMS_PER_PAGE);
 
   if (loading) {
@@ -24,16 +28,16 @@ export default function Projects() {
     <section className="py-16 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <button
-          onClick={() => navigate(-1)}  // Navigate back to the previous page
+          onClick={() => navigate(-1)} // Navigate back to the previous page
           className="mb-8 px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white rounded hover:bg-gray-300 dark:hover:bg-gray-600"
         >
           Back
         </button>
-        
+
         <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-8">
           My Projects
         </h1>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {repos.map((repo) => (
             <div
@@ -81,4 +85,3 @@ export default function Projects() {
     </section>
   );
 }
-1

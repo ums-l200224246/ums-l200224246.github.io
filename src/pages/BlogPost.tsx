@@ -1,20 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Clock, Calendar } from 'lucide-react';
-import { BlogPost } from '../types';
-
-// This would typically come from an API
-const SAMPLE_POSTS: BlogPost[] = [
-  {
-    id: 1,
-    title: 'Getting Started with React and TypeScript',
-    description: 'Learn how to set up a new React project with TypeScript and best practices for type safety.',
-    date: '2024-03-15',
-    readTime: '5 min read',
-    content: '...' // Full content would be here
-  },
-  // ... more posts
-];
+import { SAMPLE_POSTS } from '../data/posts';
 
 export default function BlogPostPage() {
   const { id } = useParams();
@@ -49,7 +36,7 @@ export default function BlogPostPage() {
         <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
           {post.title}
         </h1>
-1
+
         <div className="flex items-center space-x-4 text-sm text-gray-500 dark:text-gray-400 mb-8">
           <div className="flex items-center">
             <Calendar className="h-4 w-4 mr-2" />
@@ -61,7 +48,7 @@ export default function BlogPostPage() {
           </div>
         </div>
 
-        <div className="prose dark:prose-invert max-w-none">
+        <div className="prose dark:prose-invert max-w-none whitespace-pre-line">
           {post.content}
         </div>
       </div>
